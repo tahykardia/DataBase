@@ -43,8 +43,7 @@ namespace Server.Controllers
 
             try
             {
-                await _ramRepository.ComputersToRam(RAMId, ComputerInfoId);
-                response = StatusCode(StatusCodes.Status204NoContent);
+                response = Ok(await _ramRepository.ComputersToRam(RAMId, ComputerInfoId));
             }
             catch (Exception ex)
             {
@@ -61,8 +60,8 @@ namespace Server.Controllers
 
             try
             {
-                await _ramRepository.CreateRAMAsync(ram);
-                response = StatusCode(StatusCodes.Status204NoContent);
+                
+                response = Ok(await _ramRepository.CreateRAMAsync(ram));
             }
             catch (Exception ex)
             {

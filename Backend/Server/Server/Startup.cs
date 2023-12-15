@@ -32,7 +32,8 @@ namespace Server
 			);
 
 			services.AddScoped<IComputerInfoRepository, ComputerInfoRepository>();
-			services.AddTransient<ICPURepository, CPURepository>();
+            services.AddHostedService<MyBackgroundService>();
+            services.AddTransient<ICPURepository, CPURepository>();
 			services.AddTransient<IGPURepository, GPURepository>();
 			services.AddTransient<IRAMRepository, RAMRepository>();
 			services.AddTransient<ISSDRepository, SSDRepository>();

@@ -42,8 +42,7 @@ namespace Server.Controllers
 
             try
             {
-                await _cpuRepository.CreateCPUAsync(cpu, ComputerInfoId);
-                response = StatusCode(StatusCodes.Status204NoContent);
+                response = Ok(await _cpuRepository.CreateCPUAsync(cpu, ComputerInfoId));
             }
             catch (Exception ex)
             {

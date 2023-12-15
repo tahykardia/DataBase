@@ -60,8 +60,7 @@ namespace Server.Controllers
 
 			try
 			{
-				await _ssdRepository.CreateSSDAsync(ssd);
-				response = StatusCode(StatusCodes.Status204NoContent);
+				response = Ok(await _ssdRepository.CreateSSDAsync(ssd));
 			}
 			catch (Exception ex)
 			{

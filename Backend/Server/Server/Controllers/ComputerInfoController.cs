@@ -41,8 +41,7 @@ namespace Server.Controllers
 			IActionResult response;
 			try
 			{
-				await _computerInfoRepository.CreateComputerInfoAsync(computerInfo);
-				response = StatusCode(StatusCodes.Status204NoContent);
+				response = Ok(await _computerInfoRepository.CreateComputerInfoAsync(computerInfo));
 			}
 			catch (Exception ex)
 			{

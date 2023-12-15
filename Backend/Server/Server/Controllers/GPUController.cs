@@ -42,8 +42,7 @@ namespace Server.Controllers
 
 			try
 			{
-				await _gpuRepository.CreateGPUAsync(gpu);
-				response = StatusCode(StatusCodes.Status204NoContent);
+				response = Ok(await _gpuRepository.CreateGPUAsync(gpu));
 			}
 			catch (Exception ex)
 			{
